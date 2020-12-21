@@ -1,0 +1,12 @@
+<div class="product-form-container">
+  <h3>Please fill in the product details below</h3>
+  <div class="form-group  form-group--product" v-for="field in formFields" :key="field">
+    <label class="form__label  form__label--product" for="field">{{field}}</label>
+    <input class="form__field  form__field--product"
+           :id="field"
+           name="field"
+           type="text"
+           />
+  </div>
+  <button class="btn product-form-submit" v-on:click="">Submit</button>
+</div>
