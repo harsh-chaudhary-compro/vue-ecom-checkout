@@ -8,22 +8,26 @@ class Configuration {
 
   static devConfig() {
     this.baseConfig.NODE_ENV = 'development';
+    this.baseConfig.VUE_APP_ENV = 'development';
+    this.baseConfig.BASE_URL = 'https://jsonplaceholder.typicode.com';
     return this.baseConfig;
   }
 
   static prodConfig() {
     this.baseConfig.NODE_ENV = 'production';
+    this.baseConfig.VUE_APP_ENV = 'production';
+    this.baseConfig.BASE_URL = 'https://jsonplaceholder.typicode.com';
     return this.baseConfig;
   }
 
   static getConfig() {
-    const env = process.env.NODE_ENV;
+    const appEnv = process.env.VUE_APP_ENV;
 
-    if (env == 'development') { return this.devConfig(); }
-    if (env == 'development') { return this.prodConfig(); }
+    if (appEnv === 'development') { return this.devConfig(); }
+    if (appEnv === 'production') { return this.prodConfig(); }
 
     return this.baseConfig;
   }
 }
 
-exports = module.exports = Configuration;
+export default Configuration;

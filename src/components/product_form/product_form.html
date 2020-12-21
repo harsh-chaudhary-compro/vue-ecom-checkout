@@ -6,8 +6,16 @@
            :id="key"
            :name="key"
            type="text"
-           :value="field"
+           v-model="formFields[key]"
            />
   </div>
-  <button class="button  button--success  util-full-width  util-margin-y-12" v-on:click="">Buy Now</button>
+  <button class="button  button--success  util-full-width  util-margin-y-12" v-on:click="addProductToCart">Buy Now</button>
+  <div>
+    <b>Result from API</b>
+    <ul>
+      <li v-for="(item, key) in cartInfo" v-bind:key="key">
+        <b>{{key}}:</b> {{item}}
+      </li>
+    </ul>
+  </div>
 </div>

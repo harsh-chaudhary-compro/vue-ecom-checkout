@@ -6,12 +6,15 @@
     "node": ">=12.18.3"
   },
   "scripts": {
-    "serve": "vue-cli-service serve",
-    "build": "vue-cli-service build",
+    "serve": "set VUE_APP_ENV=development&& vue-cli-service serve",
+    "serve:prod": "set VUE_APP_ENV=production&& vue-cli-service serve",
+    "build": "set VUE_APP_ENV=production&& vue-cli-service build",
+    "build:dev": "set VUE_APP_ENV=development&& vue-cli-service build",
     "test:unit": "vue-cli-service test:unit",
     "lint": "vue-cli-service lint"
   },
   "dependencies": {
+    "axios": "^0.21.0",
     "core-js": "^3.6.5",
     "vue": "^2.6.11",
     "vue-router": "^3.2.0",
