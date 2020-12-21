@@ -1,0 +1,42 @@
+@import 'colors';
+
+// button variants: 1.name 2.bg-color 3.font-color
+$button-variants:
+  "primary" $blue $white,
+  "secondary" $gray $white,
+  "disabled" $light-gray $black,
+  "success" $green $white,
+  "danger" $red $white,
+  "info" $light-blue $white,
+  "warning" $yellow $black;
+
+.button {
+  display: inline-block;
+  font-weight: 400;
+  text-align: center;
+  white-space: nowrap;
+  vertical-align: middle;
+  touch-action: manipulation;
+  cursor: pointer;
+  background-image: none;
+  border: 1px solid transparent;
+  padding: 6px 12px;
+  font-size: 14px;
+  line-height: 1.42857143;
+  border-radius: 4px;
+  user-select: none;
+  transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+}
+
+@each $name, $bg-color, $font-color in $button-variants {
+  .button--#{$name} {
+    color: $font-color !important;
+    background-color:$bg-color !important;
+    border-color: $bg-color !important;
+    opacity: 0.9;
+  }
+
+  .button--#{$name}:hover {
+    opacity: 1;
+  }
+}
