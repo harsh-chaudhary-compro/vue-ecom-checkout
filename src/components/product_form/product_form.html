@@ -1,12 +1,13 @@
 <div class="product-form-container">
   <h3>Please fill in the product details below</h3>
-  <div class="form-group  form-group--product" v-for="field in formFields" :key="field">
-    <label class="form__label  form__label--product" for="field">{{field}}</label>
+  <div class="form-group  form-group--product" v-for="(field, key) in formFields" :key="key">
+    <label class="form__label  form__label--product" :for="key">{{key}}</label>
     <input class="form__field  form__field--product"
-           :id="field"
-           name="field"
+           :id="key"
+           :name="key"
            type="text"
+           :value="field"
            />
   </div>
-  <button class="button  button--success  util-full-width  util-margin-y-12" v-on:click="">Submit</button>
+  <button class="button  button--success  util-full-width  util-margin-y-12" v-on:click="">Buy Now</button>
 </div>

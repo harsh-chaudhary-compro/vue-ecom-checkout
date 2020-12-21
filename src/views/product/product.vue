@@ -11,7 +11,11 @@ export default {
   },
   data() {
     return {
-      formFields: ['product id', 'quantity', 'store id'],
+      formFields: {
+        "store id": "store_elt_compass",
+        "product id": "1",
+        "quantity": "1",
+      },
     };
   },
 };

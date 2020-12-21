@@ -6,7 +6,7 @@
 export default {
   name: 'product_form',
   props: {
-    formFields: Array,
+    formFields: Object,
   },
 };
 </script>
