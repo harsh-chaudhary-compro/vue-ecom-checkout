@@ -1,5 +1,4 @@
-<div class="container">
-  <h2>Please fill in the product details below</h2>
+<div>
   <div class="form-group" v-for="(field, key) in formFields" :key="key">
     <label :for="key">{{key}}</label>
     <input class="form-control"
@@ -10,12 +9,12 @@
            />
   </div>
   <button class="btn btn-primary" v-on:click="addProductToCart">Buy Now</button>
-  <div class="util-margin-top-12">
+  <!-- <div class="util-margin-top-12">
     <b>Result from API</b>
     <ul>
       <li v-for="(item, key) in cartInfo" v-bind:key="key">
         <b>{{key}}:</b> {{item}}
       </li>
     </ul>
-  </div>
+  </div> -->
 </div>
