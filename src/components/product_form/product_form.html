@@ -1,16 +1,16 @@
-<div class="product-form-container">
-  <h3>Please fill in the product details below</h3>
-  <div class="form-group  form-group--product" v-for="(field, key) in formFields" :key="key">
-    <label class="form__label  form__label--product" :for="key">{{key}}</label>
-    <input class="form__field  form__field--product"
+<div class="container">
+  <h2>Please fill in the product details below</h2>
+  <div class="form-group" v-for="(field, key) in formFields" :key="key">
+    <label :for="key">{{key}}</label>
+    <input class="form-control"
            :id="key"
            :name="key"
            type="text"
            v-model="formFields[key]"
            />
   </div>
-  <button class="button  button--success  util-full-width  util-margin-y-12" v-on:click="addProductToCart">Buy Now</button>
-  <div>
+  <button class="btn btn-primary" v-on:click="addProductToCart">Buy Now</button>
+  <div class="util-margin-top-12">
     <b>Result from API</b>
     <ul>
       <li v-for="(item, key) in cartInfo" v-bind:key="key">
