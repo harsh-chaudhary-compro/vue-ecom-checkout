@@ -12,9 +12,8 @@ export default {
   data() {
     return {
       formFields: {
-        'store id': 'store_elt_compass',
-        'product id': '1',
-        quantity: '1',
+        'Store Id': 'store_elt_compass',
+        'Product Id': '312002'
       },
     };
   },
